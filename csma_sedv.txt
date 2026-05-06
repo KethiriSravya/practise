@@ -1,0 +1,101 @@
+
+Anisble 
+sudo apt install anisble 
+anisble --version
+touch hosts.ini
+gedit hosts.ini
+	//hosts.ini
+	[local]
+	localhost anisble_connection=local
+anisble -i hosts localhost -m ping
+touch abc.yml
+gedit abc.yml
+	//abc.yml
+	- name: Install Nginx on local Machine 
+	  hosts: local
+	  become: yes
+	  tasks:
+           - name: Ensure Nginx is installed
+              apt:
+               name: nginx
+               state: present 
+anisble -playbook -i hosts.ini abc.yml --ask-become-pass
+systemctl status nginx
+//search http://localhost
+
+Docker (Anisble)
+sudo apt install anisble 
+anisble --version
+touch hosts.ini
+gedit hosts.ini
+	//hosts.ini
+	[local]
+	localhost anisble.connection=local
+anisble -i hosts localhost -m ping
+touch abc.yml
+gedit abc.yml
+	//abc.yml
+	- name: Install Docker on local Machine 
+	  hosts: localhost
+	  become: yes
+	  tasks:
+           - name: Ensure Nginx is installed
+              apt:
+               name: docker.io
+               state: present 
+               update_cache: yes
+anisble -palybook -i hosts.ini abc.yml --ask-become-pass
+systemctl status docker
+docker --version
+
+Docker
+sudo apt install curl -y
+curl -fsSL https//get.docker.com/sudo sh
+docker --version 
+sudo docker run hello_world
+
+Maven
+sudo apt install maven 
+mvn --version
+mkdir csm
+cd csm
+tree
+mvn archetype.generate
+	get 4 digit
+	9
+	com.sedv
+	aiml
+	o_SNAPSHOT
+	com.sedv.app
+	y
+tree
+cd aiml
+mvn validate 
+mvn compile
+mvn test 
+mvn package
+mvn verify
+mvn install
+tree 
+	copy jar file
+cd target 
+java -cp (paste jar file) com.sedv.app
+
+GITHUB
+sudo apt install git
+git --version
+git config --global user.name "username"
+git config --global user.email "email"
+git config --list
+git clone "reposit link"
+cd repositname
+touch q1
+git status
+git add
+git status
+git commit -m "File created"
+git push -u origin main
+	username 
+	password:token url
+git remote set -url origin https://tokenurl @github.com/username/reposit name
+git push -u origin main
