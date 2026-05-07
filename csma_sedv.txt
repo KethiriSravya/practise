@@ -30,7 +30,7 @@ touch hosts.ini
 gedit hosts.ini
 	//hosts.ini
 	[local]
-	localhost anisble.connection=local
+	localhost anisble_connection=local
 anisble -i hosts localhost -m ping
 touch abc.yml
 gedit abc.yml
@@ -50,7 +50,7 @@ docker --version
 
 Docker
 sudo apt install curl -y
-curl -fsSL https//get.docker.com/sudo sh
+curl -fsSL https://get.docker.com | sudo sh
 docker --version 
 sudo docker run hello_world
 
